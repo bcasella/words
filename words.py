@@ -6,18 +6,15 @@ class Words():
 
     def __init__(self):
         self.word = None
-        self.NWORDS = self.train(self.words(file('ble.txt').read()))
-        self.alphabet = 'abcdefghijklmnopqrstuvwxyz'
+        self.NWORDS = self.train(self.words(file('palavrasptbr.txt').read()))
+        self.alphabet = 'aãábcdeẽéfghiíjklmnoõópqrstuúvwxyz'
         
-    def setWord(self, word):
-        self.word = word
-
-    def isPalindrome(self):
-        if self.word is None:
+    def isPalindrome(self, word):
+        if word is None:
             return False
-        tamanho = len(self.word)
+        tamanho = len(word)
         for i in range(tamanho):
-            if self.word[i].upper() not in self.word[tamanho-1-i].upper():
+            if word[i].upper() not in word[tamanho-1-i].upper():
                 return False
         return True
 
@@ -38,7 +35,7 @@ class Words():
        return set(deletes + transposes + replaces + inserts)
 
     def known_edits2(self, word):
-        return set(e2 for e1 in edits1(word) for e2 in self.edits1(e1) if e2 in self.NWORDS)
+        return set(e2 for e1 in self.edits1(word) for e2 in self.edits1(e1) if e2 in self.NWORDS)
 
     def known(self, words): return set(w for w in words if w in self.NWORDS)
 
