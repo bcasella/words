@@ -18,7 +18,14 @@ class Words():
                 return False
         return True
 
-    def words(self, text): return re.findall('[a-z]+', text.lower()) 
+    #################################################################
+    # Spell Corrector function based on Peter Norvig function       #
+    # http://norvig.com/spell-correct.html                          #
+    # Changes were made to get it to work with brazilian portuguese #
+    # It uses dict words and two Machado de Assis books as words DB #
+    #################################################################
+    def words(self, text): return re.findall('[a,ã,á,b,c,d,e,ẽ,é,f,g,h,i,í,j,k,\
+        l,m,n,o,õ,ó,p,q,r,s,t,u,ú,v,w,x,y,z]+', text.lower()) 
 
     def train(self, features):
         model = collections.defaultdict(lambda: 1)
@@ -40,5 +47,6 @@ class Words():
     def known(self, words): return set(w for w in words if w in self.NWORDS)
 
     def correct(self, word):
-        candidates = self.known([word]) or self.known(self.edits1(word)) or self.known_edits2(word) or [word]
+        candidates = ( self.known([word]) or self.known(self.edits1(word)) or
+                                           self.known_edits2(word) or [word] )
         return max(candidates, key=self.NWORDS.get)
