@@ -11,7 +11,9 @@ Class that has two functions: verify if a gioven word is a palindrome, and to sp
 
 Does not have an installer. 
 To use use it type the below command your Linux / Mac terminal, and it will give more instructions
-$ python words_parses.py --help
+```unix
+python words_parses.py --help
+```
 
 ## License
 
