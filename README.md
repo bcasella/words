@@ -1,6 +1,6 @@
 ## Synopsis
 
-Class that has two functions: verify if a gioven word is a palindrome, and to spell check in ptbr a word or phrase
+Class that has two functions: verify if a given word is a palindrome, and to spell check in ptbr a word or phrase
 
 ## Dependencies
 
@@ -17,5 +17,5 @@ python words_parses.py --help
 
 ## License
 
-You are free to use this code under the MIT licencse: 
+You are free to use this code under the MIT license: 
 http://www.opensource.org/licenses/mit-license.php
