@@ -7,8 +7,8 @@ class Words():
     def __init__(self):
         self.word = None
         self.NWORDS = self.train(self.words(file('palavrasptbr.txt').read()))
-        self.alphabet = 'aãábcdeẽéfghiíjklmnoõópqrstuúvwxyz'
-        
+        self.alphabet = 'aãáâbcçdeẽéêfghiíjklmnoõóôpqrstuúvwxyz'
+
     def isPalindrome(self, word):
         if word is None:
             return False
@@ -24,8 +24,8 @@ class Words():
     # Changes were made to get it to work with brazilian portuguese #
     # It uses dict words and two Machado de Assis books as words DB #
     #################################################################
-    def words(self, text): return re.findall('[a,ã,á,b,c,d,e,ẽ,é,f,g,h,i,í,j,k,\
-        l,m,n,o,õ,ó,p,q,r,s,t,u,ú,v,w,x,y,z]+', text.lower()) 
+    def words(self, text): return re.findall('[a,ã,á,â,b,c,ç,d,e,ẽ,é,ê,f,g,h,i,í,j,k,\
+        l,m,n,o,õ,ó,ô,,p,q,r,s,t,u,ú,v,w,x,y,z]+', text.lower())
 
     def train(self, features):
         model = collections.defaultdict(lambda: 1)
