@@ -6,8 +6,9 @@ class Words():
 
     def __init__(self):
         self.word = None
-        self.NWORDS = self.train(self.words(file('palavrasptbr.txt').read()))
+        self.NWORDS = self.train(self.words(open('palavrasptbr.txt', 'r').read()))
         self.alphabet = 'aãáâbcçdeẽéêfghiíjklmnoõóôpqrstuúvwxyz'
+        #print(self.NWORDS)
 
     def isPalindrome(self, word):
         if word is None:
@@ -25,7 +26,7 @@ class Words():
     # It uses dict words and two Machado de Assis books as words DB #
     #################################################################
     def words(self, text): return re.findall('[a,ã,á,â,b,c,ç,d,e,ẽ,é,ê,f,g,h,i,í,j,k,\
-        l,m,n,o,õ,ó,ô,,p,q,r,s,t,u,ú,v,w,x,y,z]+', text.lower())
+        l,m,n,o,õ,ó,ô,,p,q,r,s,t,u,ú,v,w,x,y,z]+', text)
 
     def train(self, features):
         model = collections.defaultdict(lambda: 1)
@@ -38,6 +39,7 @@ class Words():
        deletes    = [a + b[1:] for a, b in splits if b]
        transposes = [a + b[1] + b[0] + b[2:] for a, b in splits if len(b)>1]
        replaces   = [a + c + b[1:] for a, b in splits for c in self.alphabet if b]
+       #print(replaces)
        inserts    = [a + c + b     for a, b in splits for c in self.alphabet]
        return set(deletes + transposes + replaces + inserts)
 

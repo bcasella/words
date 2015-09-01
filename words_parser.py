@@ -23,11 +23,11 @@ if __name__ == "__main__":
     words_treat = Words()
     if results.words is not None:
         for word in results.words:
-            print 'The word "{0}" is palindrome? {1}\n'.format(
-                   word, words_treat.isPalindrome(word))
+            print('The word "{0}" is palindrome? {1}\n'.format(
+                   word, words_treat.isPalindrome(word)))
         
     if results.frase is not None:
-        print "The phrase spelled correct: "
+        print("The phrase spelled correct: ")
         for word in results.frase:
-            print words_treat.correct(word.lower()),
+            print(words_treat.correct(word.lower())),
 
