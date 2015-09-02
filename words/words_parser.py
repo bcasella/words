@@ -34,3 +34,5 @@ def main():
                    words_treat.correct(word)),
 
  #           print("{0}".format(words_treat.correct(word.lower())), end=' ')
+
+main()
