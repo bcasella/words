@@ -1,12 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import re, collections
+import os
+import sys
 
 class Words():
 
     def __init__(self):
         self.word = None
-        self.NWORDS = self.train(self.words(open('palavrasptbr.txt', 'r').read()))
+        self.NWORDS = self.train(self.words(open(
+            os.path.join(os.path.dirname(os.path.realpath(__file__)),
+                         'palavrasptbr.txt'), 'r').read()))
         self.alphabet = 'aãáâbcçdeẽéêfghiíjklmnoõóôpqrstuúvwxyz'
         #print(self.NWORDS)
 
