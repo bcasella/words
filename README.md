@@ -27,10 +27,10 @@ Download words-1.0-py3.2.egg from dist/ folder
 
 As root, run on downloaded egg:
 ```unix
-easyinstall words-1.0-py2.7.egg
+easy_install words-1.0-py2.7.egg
 ```
 
-# Runing without installing
+# Running without installing
 
 First, enter in the cloned folder.  Then:
 ```unix
