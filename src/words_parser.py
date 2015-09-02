@@ -5,7 +5,8 @@ import argparse
 from words import Words
 
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--palin', action='store', dest='words', nargs='+',

@@ -10,7 +10,7 @@ setup(
     author='Bruno Casella',
     author_email='brunocasella@gmail.com',
     url='https://github.com/bcasella/words',
-    packages=['words'],
+    packages=['src'],
       long_description="""\
       Words has two functions: verify if a given word is a palindrome, and to spell check in ptbr a word or phrase
       """,
@@ -22,4 +22,9 @@ setup(
       install_requires=[
         'setuptools',
       ],
+      entry_points={
+          'console_scripts': [
+              'words = words.src.words_parser:main'	
+          ]
+      },
       )
