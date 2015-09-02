@@ -11,6 +11,7 @@ setup(
     author_email='brunocasella@gmail.com',
     url='https://github.com/bcasella/words',
     packages=['words'],
+    eager_resources=['words/palavrasptbr.txt'],
       long_description="""\
       Words has two functions: verify if a given word is a palindrome, and to spell check in ptbr a word or phrase
       """,
