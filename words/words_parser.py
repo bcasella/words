@@ -35,4 +35,5 @@ def main():
 
  #           print("{0}".format(words_treat.correct(word.lower())), end=' ')
 
-main()
+if __name__ == "__main__":
+    main()
