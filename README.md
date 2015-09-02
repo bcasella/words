@@ -15,18 +15,23 @@ Class that has two functions: verify if a given word is a palindrome, and to spe
 https://pypi.python.org/pypi/setuptools#installation-instructions
 
 #Second, install from source
+
 As root, run on the cloned folder:
 ```unix
 python setup.py install
 ```
 
 #Or install from egg package
+
+Download words-1.0-py3.2.egg from dist/ folder
+
 As root, run on downloaded egg:
 ```unix
 easyinstall words-1.0-py2.7.egg
 ```
 
 ## Runing without an instalator
+
 First, enter in the cloned folder.  Then:
 ```unix
 cd words
